@@ -208,6 +208,10 @@ window.addEventListener("scroll", () => {
 });
 
 </script>
+<p>📞 Phone: <a href="tel:+916296333052">+91 6296333052</a></p>
 
+<p>📧 Email: <a href="mailto:manjullroy69@gmail.com">manjullroy69@gmail.com</a></p>
+
+<p>📍 Location: <a href="https://www.google.com/maps?q=Kolkata" target="_blank">View Location</a></p>
 </body>
 </html>

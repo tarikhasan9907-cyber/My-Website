@@ -162,6 +162,11 @@ footer {
 
 <section class="section fade" id="contact">
     <h2>Contact</h2>
+<p>📞 Phone: <a href="tel:+916296333052">+91 6296333052</a></p>
+
+<p>📧 Email: <a href="mailto:manjullroy69@gmail.com">manjullroy69@gmail.com</a></p>
+
+<p>📍 Location: <a href="https://www.google.com/maps?q=Kolkata" target="_blank">View Location</a></p>
     <form onsubmit="return validateForm()">
         <input type="text" id="name" placeholder="Name">
         <input type="email" id="email" placeholder="Email">

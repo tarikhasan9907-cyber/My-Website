@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Business</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    transition: 0.4s;
+}
+
+/* DARK MODE */
+.dark {
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(15,23,42,0.9);
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: #38bdf8;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* SECTION */
+.section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* SERVICES */
+.services {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    padding: 25px;
+    width: 280px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* DARK TOGGLE */
+.toggle {
+    cursor: pointer;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>My Business</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <span class="toggle" onclick="toggleDark()">🌙</span>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Grow Your Business</h1>
+    <p>We help you succeed online</p>
+    <button class="btn">Get Started</button>
+</section>
+
+<section class="section fade" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">Web Design</div>
+        <div class="card">SEO</div>
+        <div class="card">Marketing</div>
+    </div>
+</section>
+
+<section class="section fade" id="contact">
+    <h2>Contact</h2>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="msg" placeholder="Message"></textarea>
+        <button class="btn">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 My Business</p>
+</footer>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/1234567890" target="_blank">💬</a>
+
+<script>
+
+/* DARK MODE */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+/* FORM VALIDATION */
+function validateForm(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(name === "" || email === ""){
+        alert("Please fill all fields!");
+        return false;
+    }
+    alert("Message Sent!");
+    return true;
+}
+
+/* SCROLL ANIMATION */
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade").forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 50){
+            el.classList.add("show");
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
